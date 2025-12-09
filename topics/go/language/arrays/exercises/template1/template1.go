@@ -8,16 +8,22 @@
 // Display the string value and address of each element.
 package main
 
-// Add imports.
+import "fmt"
 
 func main() {
 
 	// Declare an array of 5 strings set to its zero value.
 
-	// Declare an array of 5 strings and pre-populate it with names.
+	var names [5]string
 
+	// Declare an array of 5 strings and pre-populate it with names.
+	friends := [5]string{"Joe", "Ed", "Jim", "Erick", "Bill"}
 	// Assign the populated array to the array of zero values.
+	names = friends
 
 	// Iterate over the first array declared.
 	// Display the string value and address of each element.
+	for i, name := range names {
+		fmt.Println(name, &names[i])
+	}
 }
