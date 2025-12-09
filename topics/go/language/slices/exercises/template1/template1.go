@@ -9,21 +9,30 @@
 // and display the index position and value of each element in the new slice.
 package main
 
-// Add imports.
+import "fmt"
 
 func main() {
 
 	// Declare a nil slice of integers.
+	var numbers []int
 
 	// Append numbers to the slice.
-
+	for i := 0; i < 10; i++ {
+		numbers = append(numbers, i*10)
+	}
 	// Display each value in the slice.
-
+	for _, number := range numbers {
+		fmt.Println(number)
+	}
 	// Declare a slice of strings and populate the slice with names.
-
+	names := []string{"Bill", "Joan", "Jim", "Cathy", "Beth"}
 	// Display each index position and slice value.
-
+	for i, name := range names {
+		fmt.Printf("Index: %d  Name: %s\n", i, name)
+	}
 	// Take a slice of index 1 and 2 of the slice of strings.
-
-	// Display each index position and slice values for the new slice.
+	slice := names[1:3]
+	for i, name := range slice {
+		fmt.Printf("Index: %d  Name: %s\n", i, name)
+	}
 }
